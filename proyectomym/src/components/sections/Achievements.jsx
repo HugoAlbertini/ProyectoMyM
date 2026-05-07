@@ -4,12 +4,12 @@ import { X } from 'lucide-react';
 import './Achievements.css';
 
 const galleryItems = [
-  { id: 1, src: `${import.meta.env.BASE_URL}gallery-wedding.png`, label: 'Bodas', category: 'bodas' },
-  { id: 2, src: `${import.meta.env.BASE_URL}gallery-corporate.png`, label: 'Corporativos', category: 'corporativos' },
-  { id: 3, src: `${import.meta.env.BASE_URL}gallery-social.png`, label: 'Sociales', category: 'sociales' },
-  { id: 4, src: `${import.meta.env.BASE_URL}gallery-launch.png`, label: 'Lanzamientos', category: 'corporativos' },
-  { id: 5, src: `${import.meta.env.BASE_URL}gallery-celebration.png`, label: 'Celebraciones', category: 'sociales' },
-  { id: 6, src: `${import.meta.env.BASE_URL}hero-bg.png`, label: 'Producción de evento', category: 'bodas' },
+  { id: 1, src: `${import.meta.env.BASE_URL}gallery-wedding.webp`, label: 'Bodas', category: 'bodas' },
+  { id: 2, src: `${import.meta.env.BASE_URL}gallery-corporate.webp`, label: 'Corporativos', category: 'corporativos' },
+  { id: 3, src: `${import.meta.env.BASE_URL}gallery-social.webp`, label: 'Sociales', category: 'sociales' },
+  { id: 4, src: `${import.meta.env.BASE_URL}gallery-launch.webp`, label: 'Lanzamientos', category: 'corporativos' },
+  { id: 5, src: `${import.meta.env.BASE_URL}gallery-celebration.webp`, label: 'Celebraciones', category: 'sociales' },
+  { id: 6, src: `${import.meta.env.BASE_URL}hero-bg.webp`, label: 'Producción de evento', category: 'bodas' },
 ];
 
 const categories = [
@@ -126,6 +126,7 @@ const Achievements = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.4 }}
+                data-cursor="VER"
               >
                 <img src={item.src} alt={item.label} className="gallery-img" loading="lazy" />
                 <div className="gallery-overlay">

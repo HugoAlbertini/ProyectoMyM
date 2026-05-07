@@ -36,6 +36,10 @@
   transform: scale(0.5);
 }
 
+.cursor-dot.has-text {
+  opacity: 0;
+}
+
 /* ─── Cursor Circle (delayed follow) ─── */
 .cursor-circle {
   position: fixed;
@@ -49,6 +53,9 @@
   pointer-events: none;
   z-index: 99998;
   opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: opacity 0.3s ease, width 0.4s var(--ease-out-expo), height 0.4s var(--ease-out-expo), margin 0.4s var(--ease-out-expo), border-color 0.3s ease, background 0.3s ease;
   will-change: transform;
 }
@@ -73,4 +80,31 @@
   margin: -12px 0 0 -12px;
   border-color: var(--gold);
   background: transparent;
+}
+
+/* ─── Intelligent Text ─── */
+.cursor-circle.has-text {
+  width: 70px;
+  height: 70px;
+  margin: -35px 0 0 -35px;
+  background: var(--gold);
+  border-color: var(--gold);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.cursor-text {
+  color: var(--navy);
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s ease, transform 0.4s var(--ease-out-expo);
+}
+
+.cursor-circle.has-text .cursor-text {
+  opacity: 1;
+  transform: scale(1);
 }

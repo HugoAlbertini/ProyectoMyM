@@ -65,7 +65,7 @@ const VideoReel = () => {
                 loop
                 muted
                 playsInline
-                poster={`${import.meta.env.BASE_URL}gallery-celebration.png`}
+                poster={`${import.meta.env.BASE_URL}gallery-celebration.webp`}
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
               >
@@ -80,6 +80,7 @@ const VideoReel = () => {
               role="button"
               tabIndex={0}
               aria-label={isPlaying ? "Pausar video" : "Reproducir video"}
+              data-cursor={isPlaying ? "PAUSA" : "PLAY"}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
@@ -87,12 +88,6 @@ const VideoReel = () => {
                 }
               }}
             >
-              <div className="video-play-btn">
-                {isPlaying ? <Pause size={28} /> : <Play size={28} style={{ marginLeft: '3px' }} />}
-              </div>
-              {!isPlaying && (
-                <span className="video-play-label">Reproducir Reel</span>
-              )}
             </div>
           </div>
 

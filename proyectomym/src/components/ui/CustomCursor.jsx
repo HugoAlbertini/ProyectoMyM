@@ -7,12 +7,12 @@ const CustomCursor = () => {
   const [visible, setVisible] = useState(false);
   const [clicking, setClicking] = useState(false);
   const [hovering, setHovering] = useState(false);
+  const [cursorText, setCursorText] = useState('');
   const mouse = useRef({ x: 0, y: 0 });
   const circle = useRef({ x: 0, y: 0 });
   const animationId = useRef(null);
 
   useEffect(() => {
-    // Check if device has a fine pointer (mouse)
     const hasMouse = window.matchMedia('(pointer: fine)').matches;
     if (!hasMouse) return;
 
@@ -21,7 +21,6 @@ const CustomCursor = () => {
       mouse.current.y = e.clientY;
       if (!visible) setVisible(true);
 
-      // Dot follows instantly
       if (dotRef.current) {
         dotRef.current.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
       }
@@ -32,9 +31,19 @@ const CustomCursor = () => {
     const handleMouseLeave = () => setVisible(false);
     const handleMouseEnter = () => setVisible(true);
 
-    // Detect hoverable elements
     const handleOverInteractive = (e) => {
       const el = e.target;
+      
+      // Check for data-cursor text
+      const cursorTarget = el.closest('[data-cursor]');
+      if (cursorTarget) {
+        setCursorText(cursorTarget.getAttribute('data-cursor'));
+        setHovering(true);
+        return;
+      } else {
+        setCursorText('');
+      }
+
       if (
         el.tagName === 'A' ||
         el.tagName === 'BUTTON' ||
@@ -42,7 +51,8 @@ const CustomCursor = () => {
         el.closest('button') ||
         el.classList.contains('gallery-item') ||
         el.classList.contains('service-card') ||
-        el.classList.contains('sense-card')
+        el.classList.contains('sense-card') ||
+        el.closest('.magnetic-btn')
       ) {
         setHovering(true);
       } else {
@@ -50,7 +60,6 @@ const CustomCursor = () => {
       }
     };
 
-    // Smooth circle follower animation
     const animate = () => {
       const speed = 0.12;
       circle.current.x += (mouse.current.x - circle.current.x) * speed;
@@ -83,21 +92,24 @@ const CustomCursor = () => {
     };
   }, [visible]);
 
-  // Don't render on touch devices
   if (typeof window !== 'undefined' && !window.matchMedia('(pointer: fine)').matches) {
     return null;
   }
+
+  const hasTextClass = cursorText ? 'has-text' : '';
 
   return (
     <>
       <div
         ref={dotRef}
-        className={`cursor-dot ${visible ? 'visible' : ''} ${clicking ? 'clicking' : ''} ${hovering ? 'hovering' : ''}`}
+        className={`cursor-dot ${visible ? 'visible' : ''} ${clicking ? 'clicking' : ''} ${hovering ? 'hovering' : ''} ${hasTextClass}`}
       />
       <div
         ref={circleRef}
-        className={`cursor-circle ${visible ? 'visible' : ''} ${clicking ? 'clicking' : ''} ${hovering ? 'hovering' : ''}`}
-      />
+        className={`cursor-circle ${visible ? 'visible' : ''} ${clicking ? 'clicking' : ''} ${hovering ? 'hovering' : ''} ${hasTextClass}`}
+      >
+        <span className="cursor-text">{cursorText}</span>
+      </div>
     </>
   );
 };

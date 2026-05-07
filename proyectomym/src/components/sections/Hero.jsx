@@ -2,7 +2,8 @@ import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Particles from '../ui/Particles';
 import Typewriter from '../ui/Typewriter';
-import { ChevronDown } from 'lucide-react';
+import MagneticButton from '../ui/MagneticButton';
+import { ChevronDown, ArrowRight } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
@@ -86,8 +87,12 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.7 }}
         >
-          <a href="#about" className="btn-gold">Descubrir Más</a>
-          <a href="#services" className="btn-outline">Nuestros Servicios</a>
+          <MagneticButton href="#services" className="btn-outline">
+            Descubrir Servicios
+          </MagneticButton>
+          <MagneticButton href="#contact" className="btn-gold">
+            Contactar Ahora <ArrowRight size={16} />
+          </MagneticButton>
         </motion.div>
       </div>
 

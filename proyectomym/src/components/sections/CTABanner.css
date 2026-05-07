@@ -11,7 +11,7 @@
   left: 0;
   width: 100%;
   height: 140%;
-  background: url('/ProyectoMyM/gallery-celebration.png') center/cover no-repeat;
+  background: url('/ProyectoMyM/gallery-celebration.webp') center/cover no-repeat;
   filter: brightness(0.3);
   will-change: transform;
 }

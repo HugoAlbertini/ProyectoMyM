@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import './InstagramFeed.css';
 
 const feedImages = [
-  { src: `${import.meta.env.BASE_URL}gallery-wedding.png`, alt: 'Boda elegante' },
-  { src: `${import.meta.env.BASE_URL}gallery-corporate.png`, alt: 'Evento corporativo' },
-  { src: `${import.meta.env.BASE_URL}gallery-social.png`, alt: 'Evento social' },
-  { src: `${import.meta.env.BASE_URL}gallery-celebration.png`, alt: 'Celebración' },
-  { src: `${import.meta.env.BASE_URL}gallery-launch.png`, alt: 'Lanzamiento' },
-  { src: `${import.meta.env.BASE_URL}hero-bg.png`, alt: 'Producción de evento' },
+  { src: `${import.meta.env.BASE_URL}gallery-wedding.webp`, alt: 'Boda elegante' },
+  { src: `${import.meta.env.BASE_URL}gallery-corporate.webp`, alt: 'Evento corporativo' },
+  { src: `${import.meta.env.BASE_URL}gallery-social.webp`, alt: 'Evento social' },
+  { src: `${import.meta.env.BASE_URL}gallery-celebration.webp`, alt: 'Celebración' },
+  { src: `${import.meta.env.BASE_URL}gallery-launch.webp`, alt: 'Lanzamiento' },
+  { src: `${import.meta.env.BASE_URL}hero-bg.webp`, alt: 'Producción de evento' },
 ];
 
 const InstagramIcon = () => (

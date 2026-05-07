@@ -77,7 +77,7 @@ const About = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="about-image-frame">
-            <img src={`${import.meta.env.BASE_URL}founders.png`} alt="María Gabriela y María de las Mercedes - Fundadoras M&M" className="about-photo" />
+            <img src={`${import.meta.env.BASE_URL}founders.webp`} alt="María Gabriela y María de las Mercedes - Fundadoras M&M" className="about-photo" />
             <div className="about-image-border"></div>
           </div>
           

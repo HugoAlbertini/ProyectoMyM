@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import MagneticButton from '../ui/MagneticButton';
 import { getWhatsAppUrl } from '../../config';
 import './CTABanner.css';
 
@@ -31,17 +32,17 @@ const CTABanner = () => {
           <h2>¿Lista para crear<br />un evento inolvidable?</h2>
           <p>Contanos tu idea y la hacemos realidad. Cada sueño merece ser perfecto.</p>
           <div className="cta-buttons">
-            <a href="#contact" className="btn-gold">
+            <MagneticButton href="#contact" className="btn-gold">
               Contactanos <ArrowRight size={16} />
-            </a>
-            <a 
+            </MagneticButton>
+            <MagneticButton 
               href={getWhatsAppUrl()}
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-outline"
             >
               WhatsApp Directo
-            </a>
+            </MagneticButton>
           </div>
         </motion.div>
       </div>
