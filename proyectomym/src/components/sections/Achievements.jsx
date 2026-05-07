@@ -88,7 +88,7 @@ const Achievements = () => {
               className="gallery-item"
               onClick={() => setSelectedImage(item)}
             >
-              <img src={item.src} alt={item.label} className="gallery-img" />
+              <img src={item.src} alt={item.label} className="gallery-img" loading="lazy" />
               <div className="gallery-overlay">
                 <span>{item.label}</span>
               </div>

@@ -48,11 +48,57 @@
   --navy: #F5F0E8;
   --navy-light: #E8DFD0;
   --navy-mid: #D4C9B6;
-  --white: #050508;
+  --white: #0E1526;
   --text-dark: #E8DFD0;
   --text-muted: #A3A3B5;
-  --glass-white: rgba(255, 255, 255, 0.03);
+  --glass-white: rgba(255, 255, 255, 0.04);
   --glass-border: rgba(255, 255, 255, 0.08);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+:root[data-theme='dark'] body {
+  background: linear-gradient(180deg, #0B1120 0%, #0F1628 50%, #0B1120 100%);
+  background-attachment: fixed;
+}
+
+:root[data-theme='dark'] img {
+  filter: brightness(0.88) contrast(1.05);
+}
+
+:root[data-theme='dark'] .btn-gold:hover,
+:root[data-theme='dark'] .service-card:hover .service-icon,
+:root[data-theme='dark'] .process-step:hover .process-dot {
+  box-shadow: 0 0 25px rgba(201, 168, 76, 0.3);
+}
+
+:root[data-theme='dark'] .about-section,
+:root[data-theme='dark'] .services-section,
+:root[data-theme='dark'] .achievements-section,
+:root[data-theme='dark'] .ceo-section,
+:root[data-theme='dark'] .contact-section,
+:root[data-theme='dark'] .process-section,
+:root[data-theme='dark'] .vm-section,
+:root[data-theme='dark'] .timeline-section {
+  background-color: var(--champagne);
+}
+
+:root[data-theme='dark'] .vm-card,
+:root[data-theme='dark'] .process-card,
+:root[data-theme='dark'] .service-card,
+:root[data-theme='dark'] .contact-form,
+:root[data-theme='dark'] .timeline-card {
+  background: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+:root[data-theme='dark'] .about-stats {
+  background: var(--champagne-dark);
+}
+
+:root[data-theme='dark'] .navbar.scrolled {
+  background: rgba(11, 17, 32, 0.92);
 }
 
 *, *::before, *::after {

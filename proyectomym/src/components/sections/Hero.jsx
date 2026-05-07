@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Particles from '../ui/Particles';
+import Typewriter from '../ui/Typewriter';
 import { ChevronDown } from 'lucide-react';
 import './Hero.css';
 
@@ -76,7 +77,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.4 }}
         >
-          "Los sueños se realizan, no se negocian"
+          "<Typewriter text="Los sueños se realizan, no se negocian" delay={55} startDelay={2200} />"
         </motion.p>
 
         <motion.div

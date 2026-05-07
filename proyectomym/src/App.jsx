@@ -1,6 +1,7 @@
 import React from 'react';
 import Preloader from './components/ui/Preloader';
 import CustomCursor from './components/ui/CustomCursor';
+import ScrollProgress from './components/ui/ScrollProgress';
 import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
@@ -11,9 +12,12 @@ import Creativity from './components/sections/Creativity';
 import Achievements from './components/sections/Achievements';
 import VideoReel from './components/sections/VideoReel';
 import Services from './components/sections/Services';
+import TrustedBy from './components/sections/TrustedBy';
 import Testimonials from './components/sections/Testimonials';
+import Timeline from './components/sections/Timeline';
 import CEOProfile from './components/sections/CEOProfile';
 import Contact from './components/sections/Contact';
+import InstagramFeed from './components/sections/InstagramFeed';
 import CTABanner from './components/sections/CTABanner';
 import Footer from './components/layout/Footer';
 import WhatsAppButton from './components/ui/WhatsAppButton';
@@ -25,6 +29,7 @@ function App() {
     <>
       <Preloader />
       <CustomCursor />
+      <ScrollProgress />
       <div className="app-container">
         <Navbar />
         <main>
@@ -37,9 +42,12 @@ function App() {
           <Achievements />
           <VideoReel />
           <Services />
+          <TrustedBy />
           <Testimonials />
+          <Timeline />
           <CEOProfile />
           <Contact />
+          <InstagramFeed />
           <CTABanner />
         </main>
         <Footer />

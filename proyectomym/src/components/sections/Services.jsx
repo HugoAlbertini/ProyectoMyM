@@ -1,22 +1,57 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Gift, Users, Briefcase, Coffee, Palette, GraduationCap, Scissors, Calendar, Globe, Star, Utensils } from 'lucide-react';
 import './Services.css';
 
 const servicesList = [
-  { icon: <Users size={28} />, name: 'Eventos Sociales' },
-  { icon: <Heart size={28} />, name: 'Bodas' },
-  { icon: <Gift size={28} />, name: 'Cumpleaños' },
-  { icon: <Star size={28} />, name: 'Exposiciones' },
-  { icon: <Briefcase size={28} />, name: 'Almuerzos de Trabajo' },
-  { icon: <Utensils size={28} />, name: 'Brunch' },
-  { icon: <Palette size={28} />, name: 'Eventos Culturales' },
-  { icon: <Users size={28} />, name: 'Congresos' },
-  { icon: <GraduationCap size={28} />, name: 'Capacitaciones' },
-  { icon: <Scissors size={28} />, name: 'Lanzamientos' },
-  { icon: <Calendar size={28} />, name: 'Fiestas de Fin de Año' },
-  { icon: <Globe size={28} />, name: 'Ferias Nacionales e Int.' }
+  { icon: <Users size={28} />, name: 'Eventos Sociales', number: '01' },
+  { icon: <Heart size={28} />, name: 'Bodas', number: '02' },
+  { icon: <Gift size={28} />, name: 'Cumpleaños', number: '03' },
+  { icon: <Star size={28} />, name: 'Exposiciones', number: '04' },
+  { icon: <Briefcase size={28} />, name: 'Almuerzos de Trabajo', number: '05' },
+  { icon: <Utensils size={28} />, name: 'Brunch', number: '06' },
+  { icon: <Palette size={28} />, name: 'Eventos Culturales', number: '07' },
+  { icon: <Users size={28} />, name: 'Congresos', number: '08' },
+  { icon: <GraduationCap size={28} />, name: 'Capacitaciones', number: '09' },
+  { icon: <Scissors size={28} />, name: 'Lanzamientos', number: '10' },
+  { icon: <Calendar size={28} />, name: 'Fiestas de Fin de Año', number: '11' },
+  { icon: <Globe size={28} />, name: 'Ferias Nacionales e Int.', number: '12' }
 ];
+
+/* ── 3D Tilt Card ── */
+const TiltCard = ({ children, className }) => {
+  const cardRef = useRef(null);
+  const [transform, setTransform] = useState('perspective(800px) rotateX(0deg) rotateY(0deg)');
+
+  const handleMouseMove = (e) => {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    const rotateX = ((y - centerY) / centerY) * -8;
+    const rotateY = ((x - centerX) / centerX) * 8;
+    setTransform(`perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`);
+  };
+
+  const handleMouseLeave = () => {
+    setTransform('perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)');
+  };
+
+  return (
+    <div
+      ref={cardRef}
+      className={className}
+      style={{ transform, transition: 'transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)' }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      {children}
+    </div>
+  );
+};
 
 const Services = () => {
   return (
@@ -44,14 +79,16 @@ const Services = () => {
           {servicesList.map((service, index) => (
             <motion.div 
               key={index}
-              className="service-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
-              <div className="service-icon">{service.icon}</div>
-              <h3>{service.name}</h3>
+              <TiltCard className="service-card">
+                <span className="service-number">{service.number}</span>
+                <div className="service-icon">{service.icon}</div>
+                <h3>{service.name}</h3>
+              </TiltCard>
             </motion.div>
           ))}
         </div>
