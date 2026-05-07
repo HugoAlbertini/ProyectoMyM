@@ -1,10 +1,11 @@
 import React from 'react';
+import { getWhatsAppUrl } from '../../config';
 import './WhatsAppButton.css';
 
 const WhatsAppButton = () => {
   return (
     <a
-      href="https://wa.me/5493791234567?text=Hola!%20Me%20interesa%20consultar%20por%20un%20evento"
+      href={getWhatsAppUrl()}
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-float"

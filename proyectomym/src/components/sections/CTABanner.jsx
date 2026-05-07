@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { getWhatsAppUrl } from '../../config';
 import './CTABanner.css';
 
 const CTABanner = () => {
@@ -10,7 +11,6 @@ const CTABanner = () => {
     offset: ["start end", "end start"]
   });
 
-  // Move the background image slightly based on scroll progress of this section
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
 
   return (
@@ -35,7 +35,7 @@ const CTABanner = () => {
               Contactanos <ArrowRight size={16} />
             </a>
             <a 
-              href="https://wa.me/5493791234567?text=Hola!%20Me%20interesa%20consultar%20por%20un%20evento" 
+              href={getWhatsAppUrl()}
               target="_blank" 
               rel="noopener noreferrer"
               className="btn-outline"

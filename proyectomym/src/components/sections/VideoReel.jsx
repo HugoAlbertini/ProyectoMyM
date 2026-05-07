@@ -74,8 +74,19 @@ const VideoReel = () => {
               </video>
             </motion.div>
 
-            {/* Play/Pause overlay */}
-            <div className={`video-overlay ${isPlaying ? 'playing' : ''}`} onClick={togglePlay}>
+            <div 
+              className={`video-overlay ${isPlaying ? 'playing' : ''}`} 
+              onClick={togglePlay}
+              role="button"
+              tabIndex={0}
+              aria-label={isPlaying ? "Pausar video" : "Reproducir video"}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  togglePlay();
+                }
+              }}
+            >
               <div className="video-play-btn">
                 {isPlaying ? <Pause size={28} /> : <Play size={28} style={{ marginLeft: '3px' }} />}
               </div>

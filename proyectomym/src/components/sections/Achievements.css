@@ -59,6 +59,39 @@
   line-height: 1.75;
 }
 
+/* ─── Filters ─── */
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--champagne-deep);
+  color: var(--text-muted);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+.filter-btn.active {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--white);
+}
+
 /* ─── Gallery Grid ─── */
 .gallery-grid {
   display: grid;

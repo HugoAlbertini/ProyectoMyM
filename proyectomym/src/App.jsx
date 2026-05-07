@@ -15,6 +15,7 @@ import Services from './components/sections/Services';
 import TrustedBy from './components/sections/TrustedBy';
 import Testimonials from './components/sections/Testimonials';
 import Timeline from './components/sections/Timeline';
+import FAQ from './components/sections/FAQ';
 import CEOProfile from './components/sections/CEOProfile';
 import Contact from './components/sections/Contact';
 import InstagramFeed from './components/sections/InstagramFeed';
@@ -45,6 +46,7 @@ function App() {
           <TrustedBy />
           <Testimonials />
           <Timeline />
+          <FAQ />
           <CEOProfile />
           <Contact />
           <InstagramFeed />

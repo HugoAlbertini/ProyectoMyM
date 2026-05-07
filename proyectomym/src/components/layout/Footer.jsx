@@ -1,5 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { CONTACT_INFO } from '../../config';
 import './Footer.css';
 
 const InstagramIcon = () => (
@@ -35,14 +36,14 @@ const Footer = () => {
         
         <div className="footer-contact">
           <h3>Contacto</h3>
-          <div className="contact-item">
+          <a href={`tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`} className="contact-item">
             <Phone size={18} />
-            <p>+54 9 379 123-4567</p>
-          </div>
-          <div className="contact-item">
+            <p>{CONTACT_INFO.phone}</p>
+          </a>
+          <a href={`mailto:${CONTACT_INFO.email}`} className="contact-item">
             <Mail size={18} />
-            <p>contacto@mymeventos.com</p>
-          </div>
+            <p>{CONTACT_INFO.email}</p>
+          </a>
         </div>
 
         <div className="footer-nav">
@@ -58,10 +59,10 @@ const Footer = () => {
         <div className="footer-social">
           <h3>Síguenos</h3>
           <div className="social-links">
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
+            <a href={CONTACT_INFO.instagram} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Seguinos en Instagram">
               <InstagramIcon />
             </a>
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
+            <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Seguinos en Facebook">
               <FacebookIcon />
             </a>
           </div>

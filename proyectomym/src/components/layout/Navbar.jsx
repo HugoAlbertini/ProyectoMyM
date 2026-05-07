@@ -70,7 +70,7 @@ const Navbar = () => {
           <a href="#contact" className="btn-gold" onClick={() => setMobileOpen(false)}>Contacto</a>
         </div>
 
-        <button className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Abrir o cerrar menú móvil">
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
