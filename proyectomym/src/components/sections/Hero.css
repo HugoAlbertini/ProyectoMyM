@@ -15,7 +15,7 @@
   left: 0;
   width: 100%;
   height: 120%; /* Extra height to cover parallax shifting */
-  background: url('/hero-bg.png') center/cover no-repeat;
+  background: url('/ProyectoMyM/hero-bg.png') center/cover no-repeat;
   will-change: transform;
 }
 

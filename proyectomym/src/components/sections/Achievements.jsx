@@ -4,11 +4,11 @@ import { X } from 'lucide-react';
 import './Achievements.css';
 
 const galleryItems = [
-  { src: '/gallery-wedding.png', label: 'Bodas' },
-  { src: '/gallery-corporate.png', label: 'Corporativos' },
-  { src: '/gallery-social.png', label: 'Sociales' },
-  { src: '/gallery-launch.png', label: 'Lanzamientos' },
-  { src: '/gallery-celebration.png', label: 'Celebraciones' },
+  { src: `${import.meta.env.BASE_URL}gallery-wedding.png`, label: 'Bodas' },
+  { src: `${import.meta.env.BASE_URL}gallery-corporate.png`, label: 'Corporativos' },
+  { src: `${import.meta.env.BASE_URL}gallery-social.png`, label: 'Sociales' },
+  { src: `${import.meta.env.BASE_URL}gallery-launch.png`, label: 'Lanzamientos' },
+  { src: `${import.meta.env.BASE_URL}gallery-celebration.png`, label: 'Celebraciones' },
 ];
 
 const Achievements = () => {

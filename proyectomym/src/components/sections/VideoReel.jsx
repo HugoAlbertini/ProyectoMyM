@@ -65,7 +65,7 @@ const VideoReel = () => {
                 loop
                 muted
                 playsInline
-                poster="/gallery-celebration.png"
+                poster={`${import.meta.env.BASE_URL}gallery-celebration.png`}
                 onPlay={() => setIsPlaying(true)}
                 onPause={() => setIsPlaying(false)}
               >

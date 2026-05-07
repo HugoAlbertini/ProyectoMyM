@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import './InstagramFeed.css';
 
 const feedImages = [
-  { src: '/gallery-wedding.png', alt: 'Boda elegante' },
-  { src: '/gallery-corporate.png', alt: 'Evento corporativo' },
-  { src: '/gallery-social.png', alt: 'Evento social' },
-  { src: '/gallery-celebration.png', alt: 'Celebración' },
-  { src: '/gallery-launch.png', alt: 'Lanzamiento' },
-  { src: '/hero-bg.png', alt: 'Producción de evento' },
+  { src: `${import.meta.env.BASE_URL}gallery-wedding.png`, alt: 'Boda elegante' },
+  { src: `${import.meta.env.BASE_URL}gallery-corporate.png`, alt: 'Evento corporativo' },
+  { src: `${import.meta.env.BASE_URL}gallery-social.png`, alt: 'Evento social' },
+  { src: `${import.meta.env.BASE_URL}gallery-celebration.png`, alt: 'Celebración' },
+  { src: `${import.meta.env.BASE_URL}gallery-launch.png`, alt: 'Lanzamiento' },
+  { src: `${import.meta.env.BASE_URL}hero-bg.png`, alt: 'Producción de evento' },
 ];
 
 const InstagramIcon = () => (

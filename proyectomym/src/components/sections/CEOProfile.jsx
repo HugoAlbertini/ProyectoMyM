@@ -14,7 +14,7 @@ const CEOProfile = () => {
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="ceo-image-frame">
-            <img src="/founders.png" alt="María de las Mercedes Cardozo - CEO M&M" className="ceo-photo" />
+            <img src={`${import.meta.env.BASE_URL}founders.png`} alt="María de las Mercedes Cardozo - CEO M&M" className="ceo-photo" />
             <div className="ceo-image-accent"></div>
           </div>
         </motion.div>
