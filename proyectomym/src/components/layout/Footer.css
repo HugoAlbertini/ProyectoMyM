@@ -1,0 +1,137 @@
+.footer {
+  background-color: #050508;
+  color: #FFFFFF;
+  padding-top: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.3;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Brand ─── */
+.footer-brand h2 {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  color: #F5F0E8;
+  margin-bottom: 0;
+  line-height: 0.9;
+  font-weight: 300;
+}
+
+.footer-brand .subtitle {
+  font-family: var(--font-sans);
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 0.75rem;
+  margin-bottom: 25px;
+}
+
+.footer-brand .motto {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* ─── Contact ─── */
+.footer-contact h3, .footer-social h3 {
+  font-family: var(--font-sans);
+  color: #F5F0E8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 28px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.contact-item svg {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.contact-item p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.contact-item:hover p {
+  color: #FFFFFF;
+}
+
+/* ─── Social ─── */
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.social-icon:hover {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border-color: transparent;
+  color: #FFFFFF;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* ─── Bottom ─── */
+.footer-bottom {
+  text-align: center;
+  padding: 30px 0;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    text-align: center;
+  }
+  
+  .contact-item {
+    justify-content: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}

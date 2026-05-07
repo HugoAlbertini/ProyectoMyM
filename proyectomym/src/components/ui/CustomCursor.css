@@ -1,0 +1,76 @@
+/* Hide default cursor on desktop */
+@media (pointer: fine) {
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
+}
+
+/* ─── Cursor Dot (instant follow) ─── */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s var(--ease-out-expo), background 0.3s ease;
+  will-change: transform;
+}
+
+.cursor-dot.visible {
+  opacity: 1;
+}
+
+.cursor-dot.hovering {
+  transform: scale(0); /* Hide dot on hover */
+}
+
+.cursor-dot.clicking {
+  transform: scale(0.5);
+}
+
+/* ─── Cursor Circle (delayed follow) ─── */
+.cursor-circle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.4s var(--ease-out-expo), height 0.4s var(--ease-out-expo), margin 0.4s var(--ease-out-expo), border-color 0.3s ease, background 0.3s ease;
+  will-change: transform;
+}
+
+.cursor-circle.visible {
+  opacity: 1;
+}
+
+.cursor-circle.hovering {
+  width: 60px;
+  height: 60px;
+  margin: -30px 0 0 -30px;
+  border-color: rgba(201, 168, 76, 0.15);
+  background: rgba(201, 168, 76, 0.05);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.cursor-circle.clicking {
+  width: 24px;
+  height: 24px;
+  margin: -12px 0 0 -12px;
+  border-color: var(--gold);
+  background: transparent;
+}

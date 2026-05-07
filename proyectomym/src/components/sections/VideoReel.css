@@ -1,0 +1,167 @@
+.video-section {
+  background-color: var(--champagne);
+  overflow: hidden;
+}
+
+.video-header {
+  margin-bottom: 60px;
+}
+
+/* ─── Video Container ─── */
+.video-container {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Golden corner accents */
+.video-frame-accent {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.video-frame-accent--tl {
+  top: -12px;
+  left: -12px;
+  border-top: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+}
+
+.video-frame-accent--br {
+  bottom: -12px;
+  right: -12px;
+  border-bottom: 2px solid var(--gold);
+  border-right: 2px solid var(--gold);
+}
+
+/* ─── Video Wrapper ─── */
+.video-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-parallax-bg {
+  width: 100%;
+  height: 120%;
+  position: absolute;
+  top: -10%;
+  left: 0;
+}
+
+.video-player {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── Play Overlay ─── */
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(5, 5, 8, 0.45);
+  cursor: pointer;
+  transition: background 0.5s ease;
+  z-index: 10;
+}
+
+.video-overlay.playing {
+  background: rgba(5, 5, 8, 0);
+}
+
+.video-overlay.playing .video-play-btn {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.video-overlay:hover .video-play-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.video-overlay.playing:hover {
+  background: rgba(5, 5, 8, 0.25);
+}
+
+.video-play-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid rgba(201, 168, 76, 0.6);
+  background: rgba(201, 168, 76, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.video-overlay:hover .video-play-btn {
+  border-color: var(--gold);
+  background: rgba(201, 168, 76, 0.3);
+  box-shadow: 0 0 40px rgba(201, 168, 76, 0.25);
+  transform: scale(1.08);
+}
+
+.video-play-label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ─── Shimmer Border ─── */
+.video-shimmer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  border: 1px solid transparent;
+  background: linear-gradient(90deg, transparent 0%, var(--gold) 50%, transparent 100%) border-box;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1px;
+  opacity: 0.2;
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .video-frame-accent {
+    width: 40px;
+    height: 40px;
+  }
+
+  .video-frame-accent--tl {
+    top: -8px;
+    left: -8px;
+  }
+
+  .video-frame-accent--br {
+    bottom: -8px;
+    right: -8px;
+  }
+
+  .video-play-btn {
+    width: 60px;
+    height: 60px;
+  }
+}

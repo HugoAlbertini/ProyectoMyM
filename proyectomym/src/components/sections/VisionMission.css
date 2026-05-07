@@ -1,0 +1,122 @@
+.vm-section {
+  background-color: var(--champagne);
+}
+
+.vm-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.vm-header .section-label {
+  justify-content: center;
+}
+
+.vm-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.vm-card {
+  background: var(--white);
+  padding: 50px 45px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s var(--ease-out-expo);
+}
+
+.vm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.vm-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+}
+
+.vm-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--champagne);
+  color: var(--gold-dark);
+  margin-bottom: 24px;
+}
+
+.vm-card h2 {
+  font-size: 2.2rem;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+
+.vm-card .gold-line {
+  margin-bottom: 25px;
+}
+
+.vm-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.vm-card ul li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 16px;
+  color: var(--text-muted);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+.vm-card ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.vm-card p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.vm-card p em {
+  color: var(--navy);
+  font-weight: 500;
+}
+
+.vm-quote {
+  margin-top: 30px;
+  padding: 20px 24px;
+  background: var(--champagne);
+  border-left: 3px solid var(--gold);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--navy);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .vm-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .vm-card {
+    padding: 35px 30px;
+  }
+}

@@ -1,0 +1,124 @@
+.creativity-section {
+  background-color: #0B1120;
+  position: relative;
+  overflow: hidden;
+}
+
+.creativity-bg-deco {
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.06), transparent 70%);
+  pointer-events: none;
+}
+
+.creativity-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.creativity-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 70px;
+}
+
+.creativity-header .section-label::before {
+  background: linear-gradient(90deg, transparent, var(--gold-light));
+}
+
+/* ─── Senses Grid ─── */
+.senses-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.sense-card {
+  background: var(--glass-white);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 40px 20px;
+  text-align: center;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+}
+
+.sense-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.sense-card:hover {
+  background: rgba(201, 168, 76, 0.08);
+  transform: translateY(-6px);
+  border-color: rgba(201, 168, 76, 0.3);
+}
+
+.sense-card:hover::after {
+  opacity: 1;
+}
+
+.sense-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.25);
+  color: var(--gold);
+  margin-bottom: 20px;
+  transition: all 0.4s ease;
+}
+
+.sense-card:hover .sense-icon {
+  background: rgba(201, 168, 76, 0.15);
+  border-color: var(--gold);
+}
+
+.sense-card h3 {
+  font-family: var(--font-sans);
+  color: #F5F0E8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.sense-card p {
+  color: var(--text-light-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .senses-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .senses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .senses-grid {
+    grid-template-columns: 1fr;
+  }
+}
