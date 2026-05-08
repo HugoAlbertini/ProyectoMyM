@@ -8,7 +8,7 @@ const senses = [
   { icon: <Eye size={28} />, name: 'Visual', desc: 'Puestas en escena que cautivan desde el primer instante' },
   { icon: <Hand size={28} />, name: 'Tacto', desc: 'Texturas nobles y materiales que invitan a sentir' },
   { icon: <Wind size={28} />, name: 'Olfato', desc: 'Aromas y fragancias que crean atmósferas únicas' },
-  { icon: <Music size={28} />, name: 'Auditivo', desc: 'Música y acústica perfectamente curada' },
+  { icon: <Music size={28} />, name: 'Auditivo', desc: 'Música y acústica cuidadosamente seleccionada' },
   { icon: <Wine size={28} />, name: 'Gusto', desc: 'Sabores que se vuelven recuerdos memorables' }
 ];
 
