@@ -1,4 +1,5 @@
 import React from 'react';
+import { ReactLenis } from 'lenis/react';
 import Preloader from './components/ui/Preloader';
 import CustomCursor from './components/ui/CustomCursor';
 import ScrollProgress from './components/ui/ScrollProgress';
@@ -27,7 +28,7 @@ import './index.css';
 
 function App() {
   return (
-    <>
+    <ReactLenis root options={{ lerp: 0.08, duration: 1.5, smoothTouch: false }}>
       <Preloader />
       <CustomCursor />
       <ScrollProgress />
@@ -56,7 +57,7 @@ function App() {
         <BackToTop />
         <WhatsAppButton />
       </div>
-    </>
+    </ReactLenis>
   );
 }
 
