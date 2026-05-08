@@ -9,8 +9,8 @@ const faqs = [
     answer: 'Recomendamos entre 6 y 12 meses de anticipación para bodas y eventos de gran escala. Para eventos corporativos o sociales más pequeños, 3 meses suelen ser suficientes. Sin embargo, siempre trabajamos para adaptarnos a tus tiempos.'
   },
   {
-    question: '¿Trabajan solo en Corrientes?',
-    answer: 'No, cubrimos todo el Nordeste Argentino: Corrientes, Chaco, Misiones, Formosa y Santa Fe. También hemos llevado nuestra producción hasta Paraguay. Si tu evento es en otra ubicación, ¡consultanos!'
+    question: '¿Trabajan solo en Chaco?',
+    answer: 'No, cubrimos todo el Nordeste Argentino: Chaco, Corrientes, Misiones, Formosa y Santa Fe. También hemos llevado nuestra producción hasta Paraguay. Si tu evento es en otra ubicación, ¡consultanos!'
   },
   {
     question: '¿Qué incluye el servicio de producción de eventos?',
