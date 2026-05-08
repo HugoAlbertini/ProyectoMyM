@@ -49,7 +49,7 @@ const About = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="section-label">Sobre Nosotras</span>
+          <span className="section-label section-label--center">Sobre Nosotras</span>
           <TextReveal text="Creamos momentos que perduran" className="section-title" />
           
           <div className="about-text">

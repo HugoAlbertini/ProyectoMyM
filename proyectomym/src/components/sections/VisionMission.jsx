@@ -9,7 +9,7 @@ const VisionMission = () => {
       <div className="container">
         <div className="vm-header">
           <motion.span 
-            className="section-label"
+            className="section-label section-label--center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

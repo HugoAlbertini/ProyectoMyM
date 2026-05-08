@@ -54,6 +54,18 @@
   line-height: 1;
 }
 
+.about-quote::after {
+  content: '\201D';
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  color: var(--gold);
+  opacity: 0.2;
+  position: absolute;
+  bottom: -30px;
+  right: 20px;
+  line-height: 1;
+}
+
 .about-quote p {
   font-family: var(--font-serif);
   font-size: 1.4rem;
