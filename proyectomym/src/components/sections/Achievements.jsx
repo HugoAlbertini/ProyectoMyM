@@ -128,7 +128,6 @@ const Achievements = () => {
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item) => (
               <motion.div 
-                layout
                 key={item.id}
                 className="gallery-item"
                 onMouseEnter={playHover}

@@ -1,12 +1,11 @@
 .case-study-overlay {
   position: fixed;
   inset: 0;
-  background: var(--navy);
+  background: #0B1120;
   z-index: 100000;
   overflow-y: auto;
   overflow-x: hidden;
-  display: flex;
-  justify-content: center;
+  display: block;
 }
 
 .case-study-container {
@@ -37,7 +36,7 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  color: #FFFFFF;
   padding: 12px 24px;
   border-radius: 30px;
   cursor: pointer;
@@ -100,7 +99,7 @@
 .case-title {
   font-family: var(--font-serif);
   font-size: 4.5rem;
-  color: var(--white);
+  color: #FFFFFF;
   line-height: 1.1;
   margin: 0;
 }

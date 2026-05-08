@@ -43,10 +43,12 @@ const CaseStudy = ({ item, onClose }) => {
           </button>
         </header>
 
-        {/* Hero Image with Layout Animation */}
+        {/* Hero Image */}
         <motion.div 
           className="case-hero"
-          layoutId={`gallery-item-${item.id}`}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <img src={item.src} alt={item.label} />
           <div className="case-hero-overlay"></div>
