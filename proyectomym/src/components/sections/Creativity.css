@@ -28,6 +28,9 @@
 .creativity-header .section-label::before {
   background: linear-gradient(90deg, transparent, var(--gold-light));
 }
+.creativity-header .section-label::after {
+  background: linear-gradient(270deg, transparent, var(--gold-light));
+}
 
 /* ─── Senses Grid ─── */
 .senses-grid {
