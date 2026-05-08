@@ -69,9 +69,6 @@ const Navbar = () => {
           <button className="theme-toggle" onClick={toggleTheme} onMouseEnter={playHover} aria-label="Toggle Dark Mode">
             {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
           </button>
-          <button className="theme-toggle sound-toggle" onClick={toggleMute} onMouseEnter={playHover} aria-label={isMuted ? "Activar Sonido" : "Silenciar Sonido"}>
-            {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
-          </button>
           <a href="#contact" className="btn-gold" onClick={() => setMobileOpen(false)} onMouseEnter={playHover}>Contacto</a>
         </div>
 
