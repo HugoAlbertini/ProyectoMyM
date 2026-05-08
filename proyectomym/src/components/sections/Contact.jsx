@@ -86,6 +86,25 @@ const Contact = () => {
               <span>Nordeste Argentino & Paraguay</span>
             </div>
           </div>
+
+          <motion.div 
+            className="map-container"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <iframe 
+              src="https://maps.google.com/maps?q=-27.442614,-58.998422&hl=es&z=15&output=embed" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ubicación M&M"
+            ></iframe>
+          </motion.div>
         </motion.div>
 
         <motion.form
