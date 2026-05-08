@@ -112,3 +112,140 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ─── Card Interactive State ─── */
+.service-card {
+  cursor: pointer;
+}
+
+.service-card-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+  z-index: 1;
+}
+
+.service-card:hover .service-card-action {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Luxury Modal ─── */
+.service-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 17, 32, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.service-modal {
+  background: var(--champagne);
+  width: 100%;
+  max-width: 500px;
+  padding: 50px 40px;
+  position: relative;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.service-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: var(--navy);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-modal-close:hover {
+  opacity: 1;
+  color: var(--gold-dark);
+  transform: rotate(90deg);
+}
+
+.service-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.service-modal-icon {
+  color: var(--gold);
+}
+
+.service-modal-number {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--gold);
+  opacity: 0.3;
+  line-height: 1;
+}
+
+.service-modal-title {
+  font-family: var(--font-sans);
+  font-size: 1.4rem;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.service-modal-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto 25px;
+}
+
+.service-modal-desc {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.service-modal-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* Dark mode overrides for modal */
+:root[data-theme='dark'] .service-modal {
+  background: var(--navy);
+}
+
+:root[data-theme='dark'] .service-modal-close {
+  color: var(--champagne);
+}
+
+:root[data-theme='dark'] .service-modal-title {
+  color: var(--champagne);
+}
