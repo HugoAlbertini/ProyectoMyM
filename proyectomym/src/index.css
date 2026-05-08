@@ -195,7 +195,7 @@ img {
   display: block;
   width: 40px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold));
+  background-color: var(--gold);
   flex-shrink: 0;
 }
 
@@ -208,7 +208,7 @@ img {
   display: block;
   width: 40px;
   height: 1px;
-  background: linear-gradient(270deg, transparent, var(--gold));
+  background-color: var(--gold);
   flex-shrink: 0;
 }
 
