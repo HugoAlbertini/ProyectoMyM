@@ -44,10 +44,10 @@ function App() {
           <Achievements />
           <VideoReel />
           <Services />
-          <Testimonials />
           <Timeline />
           <FAQ />
           <CEOProfile />
+          <Testimonials />
           <Contact />
           <InstagramFeed />
           <CTABanner />
