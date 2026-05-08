@@ -67,9 +67,9 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
         >
           <span className="section-label">Hablemos</span>
-          <h2 className="section-title">Contanos<br />tu idea</h2>
+          <h2 className="section-title">¿Lista para crear<br />un evento inolvidable?</h2>
           <p className="contact-desc">
-            Cada evento comienza con una conversación. Escribinos y te responderemos a la brevedad para comenzar a planificar juntos.
+            Contanos tu idea y la hacemos realidad. Cada sueño merece ser perfecto. Escribinos y te responderemos a la brevedad para comenzar a planificar juntos.
           </p>
 
           <div className="contact-details">

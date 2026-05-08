@@ -7,7 +7,6 @@ import Navbar from './components/layout/Navbar';
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Marquee from './components/ui/Marquee';
-import VisionMission from './components/sections/VisionMission';
 import Process from './components/sections/Process';
 import Creativity from './components/sections/Creativity';
 import Achievements from './components/sections/Achievements';
@@ -16,10 +15,8 @@ import Services from './components/sections/Services';
 import Testimonials from './components/sections/Testimonials';
 import Timeline from './components/sections/Timeline';
 import FAQ from './components/sections/FAQ';
-import CEOProfile from './components/sections/CEOProfile';
 import Contact from './components/sections/Contact';
 import InstagramFeed from './components/sections/InstagramFeed';
-import CTABanner from './components/sections/CTABanner';
 import Footer from './components/layout/Footer';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import BackToTop from './components/ui/BackToTop';
@@ -36,21 +33,18 @@ function App() {
         <Navbar />
         <main>
           <Hero />
-          <About />
           <Marquee />
-          <VisionMission />
-          <Process />
-          <Creativity />
-          <Achievements />
-          <VideoReel />
+          <About />
           <Services />
+          <Creativity />
+          <Process />
+          <VideoReel />
+          <Achievements />
           <Timeline />
-          <FAQ />
-          <CEOProfile />
           <Testimonials />
+          <FAQ />
           <Contact />
           <InstagramFeed />
-          <CTABanner />
         </main>
         <Footer />
         <BackToTop />

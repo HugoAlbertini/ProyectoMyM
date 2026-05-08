@@ -67,6 +67,16 @@ const About = () => {
           <blockquote className="about-quote">
             <p>Dejá todo en nuestras manos y disfrutá del momento. Diseñamos y planificamos todo, incluso los imprevistos.</p>
           </blockquote>
+
+          <div className="about-credentials">
+            <h3 className="credentials-title">María de las Mercedes Cardozo — CEO</h3>
+            <ul className="credentials-list">
+              <li><strong>Diseño de Interiores:</strong> Formación profesional en diseño de espacios.</li>
+              <li><strong>+18 Años de Trayectoria:</strong> Organización integral de eventos.</li>
+              <li><strong>Docencia Universitaria:</strong> Profesora de diseño y organización (2009-2020).</li>
+              <li><strong>Comunidad CARE:</strong> Integrante de la Comunidad Argentina de Romance y Eventos.</li>
+            </ul>
+          </div>
         </motion.div>
         
         <motion.div 
