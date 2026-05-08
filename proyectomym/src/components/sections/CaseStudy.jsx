@@ -26,6 +26,7 @@ const CaseStudy = ({ item, onClose }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      data-lenis-prevent
     >
       <div className="case-study-container">
         
