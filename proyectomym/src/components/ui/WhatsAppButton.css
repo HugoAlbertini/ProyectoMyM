@@ -5,27 +5,30 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #25D366;
-  color: white;
+  background: var(--navy);
+  color: var(--gold);
+  border: 1px solid var(--gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 6px 20px rgba(11, 17, 32, 0.4);
   z-index: 999;
   transition: all 0.4s var(--ease-out-expo);
 }
 
 .whatsapp-float:hover {
   transform: scale(1.1) translateY(-3px);
-  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.45);
+  box-shadow: 0 10px 30px rgba(201, 168, 76, 0.2);
+  background: var(--gold);
+  color: var(--navy);
 }
 
 .whatsapp-float::before {
   content: '';
   position: absolute;
-  inset: -4px;
+  inset: -6px;
   border-radius: 50%;
-  border: 2px solid rgba(37, 211, 102, 0.3);
+  border: 1px solid rgba(201, 168, 76, 0.4);
   animation: pulse-ring 2s ease-out infinite;
 }
 

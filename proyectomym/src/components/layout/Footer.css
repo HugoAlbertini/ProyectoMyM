@@ -196,19 +196,7 @@
   font-style: italic;
 }
 
-.footer-heart {
-  color: var(--gold);
-  display: inline-block;
-  animation: heartbeat 2s ease-in-out infinite;
-}
 
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  15% { transform: scale(1.2); }
-  30% { transform: scale(1); }
-  45% { transform: scale(1.15); }
-  60% { transform: scale(1); }
-}
 
 /* ─── Responsive ─── */
 @media (max-width: 1024px) {

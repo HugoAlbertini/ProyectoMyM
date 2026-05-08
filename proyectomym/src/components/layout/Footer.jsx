@@ -72,7 +72,7 @@ const Footer = () => {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <p>&copy; {new Date().getFullYear()} M&M by Ecléctica. Todos los derechos reservados.</p>
-          <p className="footer-credit">Diseñado con <span className="footer-heart">♥</span> para crear momentos eternos</p>
+          <p className="footer-credit">Diseño de Experiencias Exclusivas</p>
         </div>
       </div>
     </footer>

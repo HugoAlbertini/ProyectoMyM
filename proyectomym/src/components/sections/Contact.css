@@ -68,12 +68,12 @@
   width: 100%;
   flex: 1;
   border: none;
-  filter: grayscale(0.2) contrast(1.1);
+  filter: invert(90%) grayscale(0.6) sepia(0.2) hue-rotate(180deg) contrast(1.1);
   transition: filter 0.3s ease;
 }
 
 .map-container:hover iframe {
-  filter: grayscale(0) contrast(1);
+  filter: invert(90%) grayscale(0.4) sepia(0.3) hue-rotate(180deg) contrast(1.2);
 }
 
 /* ─── Form ─── */
