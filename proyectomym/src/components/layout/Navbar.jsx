@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Menu, X, Moon, Sun, Volume2, VolumeX } from 'lucide-react';
+import { useSound } from '../../context/SoundContext';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -7,6 +8,7 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [theme, setTheme] = useState('light');
   const [activeSection, setActiveSection] = useState('');
+  const { isMuted, toggleMute, playHover } = useSound();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -61,13 +63,16 @@ const Navbar = () => {
         </div>
         
         <div className={`nav-links ${mobileOpen ? 'open' : ''}`}>
-          <a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={() => setMobileOpen(false)}>Quiénes Somos</a>
-          <a href="#services" className={activeSection === 'services' ? 'active' : ''} onClick={() => setMobileOpen(false)}>Servicios</a>
-          <a href="#achievements" className={activeSection === 'achievements' ? 'active' : ''} onClick={() => setMobileOpen(false)}>Logros</a>
-          <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle Dark Mode">
+          <a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={() => setMobileOpen(false)} onMouseEnter={playHover}>Quiénes Somos</a>
+          <a href="#services" className={activeSection === 'services' ? 'active' : ''} onClick={() => setMobileOpen(false)} onMouseEnter={playHover}>Servicios</a>
+          <a href="#achievements" className={activeSection === 'achievements' ? 'active' : ''} onClick={() => setMobileOpen(false)} onMouseEnter={playHover}>Logros</a>
+          <button className="theme-toggle" onClick={toggleTheme} onMouseEnter={playHover} aria-label="Toggle Dark Mode">
             {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
           </button>
-          <a href="#contact" className="btn-gold" onClick={() => setMobileOpen(false)}>Contacto</a>
+          <button className="theme-toggle sound-toggle" onClick={toggleMute} onMouseEnter={playHover} aria-label={isMuted ? "Activar Sonido" : "Silenciar Sonido"}>
+            {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+          </button>
+          <a href="#contact" className="btn-gold" onClick={() => setMobileOpen(false)} onMouseEnter={playHover}>Contacto</a>
         </div>
 
         <button className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Abrir o cerrar menú móvil">

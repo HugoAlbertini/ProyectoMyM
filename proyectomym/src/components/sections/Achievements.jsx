@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { useSound } from '../../context/SoundContext';
+import CaseStudy from './CaseStudy';
 import './Achievements.css';
 
 const galleryItems = [
@@ -22,6 +24,7 @@ const categories = [
 const Achievements = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [filter, setFilter] = useState('todos');
+  const { playHover, playClick, playTransition } = useSound();
 
   // Close lightbox on Escape key
   useEffect(() => {
@@ -100,7 +103,14 @@ const Achievements = () => {
             <button 
               key={cat.id}
               className={`filter-btn ${filter === cat.id ? 'active' : ''}`}
-              onClick={() => setFilter(cat.id)}
+              onMouseEnter={playHover}
+              onClick={() => {
+                playClick();
+                if (filter !== cat.id) {
+                  setFilter(cat.id);
+                  playTransition();
+                }
+              }}
             >
               {cat.label}
             </button>
@@ -121,7 +131,11 @@ const Achievements = () => {
                 layout
                 key={item.id}
                 className="gallery-item"
-                onClick={() => setSelectedImage(item)}
+                onMouseEnter={playHover}
+                onClick={() => {
+                  playClick();
+                  setSelectedImage(item);
+                }}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
@@ -138,31 +152,13 @@ const Achievements = () => {
         </motion.div>
       </div>
 
-      {/* Lightbox Modal */}
+      {/* Case Study Modal */}
       <AnimatePresence>
         {selectedImage && (
-          <motion.div 
-            className="lightbox-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={() => setSelectedImage(null)}
-          >
-            <button className="lightbox-close" onClick={() => setSelectedImage(null)} aria-label="Cerrar imagen">
-              <X size={32} />
-            </button>
-            <motion.div 
-              className="lightbox-content"
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              onClick={(e) => e.stopPropagation()} // Prevent click from closing when clicking image
-            >
-              <img src={selectedImage.src} alt={selectedImage.label} className="lightbox-img" />
-              <div className="lightbox-caption">{selectedImage.label}</div>
-            </motion.div>
-          </motion.div>
+          <CaseStudy 
+            item={selectedImage} 
+            onClose={() => setSelectedImage(null)} 
+          />
         )}
       </AnimatePresence>
     </section>

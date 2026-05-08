@@ -1,0 +1,236 @@
+.case-study-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--navy);
+  z-index: 100000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.case-study-container {
+  width: 100%;
+  max-width: 100%;
+  background: var(--white);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ─── Header ─── */
+.case-study-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(11, 17, 32, 0.8), transparent);
+  pointer-events: none;
+}
+
+.case-close-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.case-close-btn:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+/* ─── Hero ─── */
+.case-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.case-hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.case-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(11, 17, 32, 0.9) 0%, rgba(11, 17, 32, 0.2) 50%, transparent 100%);
+  z-index: 2;
+}
+
+.case-hero-content {
+  position: relative;
+  z-index: 3;
+  padding-bottom: 60px;
+}
+
+.case-category {
+  display: inline-block;
+  color: var(--gold);
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.case-title {
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  color: var(--white);
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* ─── Content ─── */
+.case-content-wrapper {
+  padding: 80px 20px;
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 60px;
+}
+
+.case-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-right: 40px;
+  border-right: 1px solid var(--champagne-deep);
+}
+
+.meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  color: var(--gold);
+}
+
+.meta-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.meta-item strong {
+  font-family: var(--font-sans);
+  color: var(--navy);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.meta-item span {
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.case-body h2 {
+  font-family: var(--font-serif);
+  color: var(--navy);
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.case-body p {
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+/* ─── Palette ─── */
+.case-palette {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--champagne-deep);
+}
+
+.case-palette h3 {
+  font-family: var(--font-sans);
+  color: var(--navy);
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.palette-colors {
+  display: flex;
+  gap: 20px;
+}
+
+.color-swatch {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 4px solid var(--white);
+}
+
+@media (max-width: 900px) {
+  .case-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .case-meta {
+    border-right: none;
+    border-bottom: 1px solid var(--champagne-deep);
+    padding-right: 0;
+    padding-bottom: 40px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .case-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .case-study-header {
+    padding: 20px;
+  }
+  
+  .case-hero {
+    height: 50vh;
+  }
+  
+  .case-hero-content {
+    padding-bottom: 30px;
+  }
+  
+  .case-title {
+    font-size: 2.2rem;
+  }
+  
+  .case-meta {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

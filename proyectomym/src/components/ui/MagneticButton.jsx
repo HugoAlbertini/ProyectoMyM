@@ -1,9 +1,11 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useSound } from '../../context/SoundContext';
 
 const MagneticButton = ({ children, className, onClick, href, target, rel, ariaLabel }) => {
   const ref = useRef(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const { playHover, playClick } = useSound();
 
   const handleMouse = (e) => {
     const { clientX, clientY } = e;
@@ -25,6 +27,7 @@ const MagneticButton = ({ children, className, onClick, href, target, rel, ariaL
       ref={ref}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
+      onMouseEnter={playHover}
       animate={{ x, y }}
       transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
     >
@@ -37,7 +40,10 @@ const MagneticButton = ({ children, className, onClick, href, target, rel, ariaL
       <a 
         href={href} 
         className={className} 
-        onClick={onClick} 
+        onClick={(e) => {
+          playClick();
+          if (onClick) onClick(e);
+        }} 
         target={target} 
         rel={rel}
         aria-label={ariaLabel}
@@ -51,7 +57,10 @@ const MagneticButton = ({ children, className, onClick, href, target, rel, ariaL
   return (
     <button 
       className={className} 
-      onClick={onClick}
+      onClick={(e) => {
+        playClick();
+        if (onClick) onClick(e);
+      }}
       aria-label={ariaLabel}
       style={{ display: 'inline-block', background: 'none', border: 'none', padding: 0, cursor: 'pointer' }}
     >
