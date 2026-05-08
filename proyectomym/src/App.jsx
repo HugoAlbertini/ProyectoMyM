@@ -13,7 +13,6 @@ import Creativity from './components/sections/Creativity';
 import Achievements from './components/sections/Achievements';
 import VideoReel from './components/sections/VideoReel';
 import Services from './components/sections/Services';
-import TrustedBy from './components/sections/TrustedBy';
 import Testimonials from './components/sections/Testimonials';
 import Timeline from './components/sections/Timeline';
 import FAQ from './components/sections/FAQ';
@@ -45,7 +44,6 @@ function App() {
           <Achievements />
           <VideoReel />
           <Services />
-          <TrustedBy />
           <Testimonials />
           <Timeline />
           <FAQ />
