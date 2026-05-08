@@ -1,5 +1,5 @@
 .marquee-section {
-  background: var(--navy);
+  background: #0B1120;
   overflow: hidden;
   padding: 22px 0;
   border-top: 1px solid rgba(201, 168, 76, 0.15);
@@ -22,7 +22,7 @@
   font-family: var(--font-serif);
   font-size: 1.6rem;
   font-weight: 400;
-  color: var(--champagne);
+  color: #F5F0E8;
   opacity: 0.5;
   padding: 0 20px;
   letter-spacing: 1px;

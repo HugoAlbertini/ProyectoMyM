@@ -217,7 +217,7 @@ img {
 }
 
 .section-title--light {
-  color: var(--champagne);
+  color: #F5F0E8;
 }
 
 .section-subtitle {
@@ -228,7 +228,7 @@ img {
 }
 
 .section-subtitle--light {
-  color: var(--text-light-muted);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ─── Divider ─── */

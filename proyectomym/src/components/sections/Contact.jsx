@@ -94,6 +94,7 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
+            <span className="map-label">📍 Nuestra Ubicación</span>
             <iframe 
               src="https://maps.google.com/maps?q=-27.442614,-58.998422&hl=es&z=15&output=embed" 
               width="100%" 
@@ -133,12 +134,12 @@ const Contact = () => {
               <motion.div key="form" initial={{ opacity: 1 }} exit={{ opacity: 0 }}>
                 <div className="form-row">
                   <div className={`form-group ${errors.name ? 'form-group--error' : ''}`}>
-                    <label htmlFor="name">Nombre completo</label>
+                    <label htmlFor="name">Nombre completo <span className="required">*</span></label>
                     <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Tu nombre" />
                     {errors.name && <span className="form-error">{errors.name}</span>}
                   </div>
                   <div className={`form-group ${errors.email ? 'form-group--error' : ''}`}>
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">Email <span className="required">*</span></label>
                     <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="tu@email.com" />
                     {errors.email && <span className="form-error">{errors.email}</span>}
                   </div>
@@ -150,7 +151,7 @@ const Contact = () => {
                     <input type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} placeholder="+54 9 xxx xxx-xxxx" />
                   </div>
                   <div className={`form-group ${errors.eventType ? 'form-group--error' : ''}`}>
-                    <label htmlFor="eventType">Tipo de evento</label>
+                    <label htmlFor="eventType">Tipo de evento <span className="required">*</span></label>
                     <select id="eventType" name="eventType" value={formData.eventType} onChange={handleChange}>
                       <option value="">Seleccioná una opción</option>
                       <option value="boda">Boda</option>
@@ -165,7 +166,7 @@ const Contact = () => {
                 </div>
 
                 <div className={`form-group ${errors.message ? 'form-group--error' : ''}`}>
-                  <label htmlFor="message">Contanos sobre tu evento</label>
+                  <label htmlFor="message">Contanos sobre tu evento <span className="required">*</span></label>
                   <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="4" placeholder="¿Qué tenés en mente? Fecha estimada, cantidad de invitados, estilo..."></textarea>
                   {errors.message && <span className="form-error">{errors.message}</span>}
                 </div>

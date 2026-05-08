@@ -89,7 +89,7 @@
 .filter-btn.active {
   background: var(--gold);
   border-color: var(--gold);
-  color: var(--white);
+  color: #FFFFFF;
 }
 
 /* ─── Gallery Grid ─── */
@@ -246,7 +246,7 @@
 .lightbox-caption {
   font-family: var(--font-serif);
   font-size: 2rem;
-  color: var(--champagne);
+  color: #F5F0E8;
   margin-top: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;

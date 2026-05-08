@@ -75,6 +75,14 @@ const Navbar = () => {
           <a href="#contact" className="btn-gold" onClick={() => setMobileOpen(false)} onMouseEnter={playHover}>Contacto</a>
         </div>
 
+        {mobileOpen && (
+          <div 
+            className="mobile-overlay" 
+            onClick={() => setMobileOpen(false)}
+            aria-hidden="true"
+          />
+        )}
+
         <button className="mobile-toggle" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Abrir o cerrar menú móvil">
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

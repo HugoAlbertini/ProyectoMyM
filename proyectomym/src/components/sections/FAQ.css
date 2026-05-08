@@ -42,6 +42,10 @@
   color: var(--gold-dark);
 }
 
+.faq-question:active {
+  background: var(--champagne);
+}
+
 .faq-item--open .faq-question {
   color: var(--gold-dark);
 }

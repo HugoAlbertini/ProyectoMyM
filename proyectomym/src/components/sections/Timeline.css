@@ -63,13 +63,17 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--champagne);
+  background: var(--white);
   border: 2px solid var(--gold);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
   transition: all 0.4s ease;
+}
+
+:root[data-theme='dark'] .timeline-dot {
+  background: #1C2744;
 }
 
 .timeline-dot-inner {

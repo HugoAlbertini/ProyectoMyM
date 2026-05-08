@@ -45,16 +45,30 @@
   margin-top: 40px;
   border-radius: 8px;
   overflow: hidden;
-  height: 250px;
+  height: 290px;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--champagne-deep);
+  display: flex;
+  flex-direction: column;
+}
+
+.map-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  padding: 10px 16px;
+  background: var(--white);
+  flex-shrink: 0;
 }
 
 .map-container iframe {
   width: 100%;
-  height: 100%;
+  flex: 1;
   border: none;
-  filter: grayscale(0.2) contrast(1.1); /* To make it fit the aesthetic a bit better */
+  filter: grayscale(0.2) contrast(1.1);
   transition: filter 0.3s ease;
 }
 
@@ -210,4 +224,10 @@ a.contact-detail-item {
 
 a.contact-detail-item:hover {
   color: var(--navy);
+}
+
+/* ─── Required Asterisk ─── */
+.required {
+  color: var(--gold);
+  font-weight: 700;
 }
