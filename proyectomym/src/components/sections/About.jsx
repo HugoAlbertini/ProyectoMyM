@@ -96,6 +96,11 @@ const About = () => {
               <span className="stat-number">{stat3.count}</span>
               <span className="stat-label">Países<br/>cubiertos</span>
             </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-number">∞</span>
+              <span className="stat-label">Momentos<br/>inolvidables</span>
+            </div>
           </div>
         </motion.div>
       </div>

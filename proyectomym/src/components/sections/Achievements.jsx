@@ -10,8 +10,7 @@ const galleryItems = [
   { id: 2, src: `${import.meta.env.BASE_URL}gallery-corporate.webp`, label: 'Corporativos', category: 'corporativos' },
   { id: 3, src: `${import.meta.env.BASE_URL}gallery-social.webp`, label: 'Sociales', category: 'sociales' },
   { id: 4, src: `${import.meta.env.BASE_URL}gallery-launch.webp`, label: 'Lanzamientos', category: 'corporativos' },
-  { id: 5, src: `${import.meta.env.BASE_URL}gallery-celebration.webp`, label: 'Celebraciones', category: 'sociales' },
-  { id: 6, src: `${import.meta.env.BASE_URL}hero-bg.webp`, label: 'Producción de evento', category: 'bodas' },
+  { id: 5, src: `${import.meta.env.BASE_URL}gallery-celebration.webp`, label: 'Celebraciones', category: 'sociales' }
 ];
 
 const categories = [
