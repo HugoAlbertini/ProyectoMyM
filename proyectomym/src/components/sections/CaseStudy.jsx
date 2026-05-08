@@ -119,15 +119,6 @@ const CaseStudy = ({ item, onClose }) => {
               </p>
             </div>
 
-            <div className="case-palette">
-              <h3>Paleta del Evento</h3>
-              <div className="palette-colors">
-                <div className="color-swatch" style={{ background: '#D4AF37' }}></div>
-                <div className="color-swatch" style={{ background: '#2C3E50' }}></div>
-                <div className="color-swatch" style={{ background: '#E07A5F' }}></div>
-                <div className="color-swatch" style={{ background: '#F4F1DE' }}></div>
-              </div>
-            </div>
           </motion.div>
         </div>
 
