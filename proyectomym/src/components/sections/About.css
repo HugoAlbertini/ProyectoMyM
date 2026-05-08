@@ -151,3 +151,27 @@
     aspect-ratio: 4/3;
   }
 }
+
+@media (max-width: 480px) {
+  .about-stats {
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 25px 20px;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .stat-item {
+    flex: 1 1 40%;
+  }
+
+  .stat-number {
+    font-size: 2.2rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+  }
+}

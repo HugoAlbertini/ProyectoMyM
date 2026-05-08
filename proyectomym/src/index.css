@@ -109,6 +109,7 @@
 
 html {
   scroll-behavior: initial; /* Lenis overrides this */
+  overflow-x: hidden;
 }
 
 /* ─── Lenis Scroll Base ─── */

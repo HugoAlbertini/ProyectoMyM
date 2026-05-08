@@ -25,6 +25,7 @@ import Footer from './components/layout/Footer';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import BackToTop from './components/ui/BackToTop';
 import './index.css';
+import './App.css';
 
 function App() {
   return (

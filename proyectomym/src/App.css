@@ -1,2 +1,8 @@
 /* App-level styles — Project M&M by Ecléctica */
 /* Component-specific styles are in their respective CSS files */
+
+.app-container {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
