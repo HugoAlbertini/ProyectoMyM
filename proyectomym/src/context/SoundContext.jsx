@@ -21,31 +21,9 @@ export const SoundProvider = ({ children }) => {
   };
 
   const playHover = useCallback(() => {
-    if (isMuted || !audioCtx) return;
-    
-    // Resume context if suspended (browser autoplay policy)
-    if (audioCtx.state === 'suspended') {
-      audioCtx.resume();
-    }
-
-    const osc = audioCtx.createOscillator();
-    const gainNode = audioCtx.createGain();
-
-    osc.type = 'sine';
-    // Very high pitch, very short duration for a subtle "tick"
-    osc.frequency.setValueAtTime(800, audioCtx.currentTime);
-    osc.frequency.exponentialRampToValueAtTime(1200, audioCtx.currentTime + 0.05);
-
-    gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
-    gainNode.gain.linearRampToValueAtTime(0.05, audioCtx.currentTime + 0.01); // Volume (very low)
-    gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.05);
-
-    osc.connect(gainNode);
-    gainNode.connect(audioCtx.destination);
-
-    osc.start();
-    osc.stop(audioCtx.currentTime + 0.05);
-  }, [isMuted, audioCtx]);
+    // Hover sound removed per user request
+    return;
+  }, []);
 
   const playClick = useCallback(() => {
     if (isMuted || !audioCtx) return;
